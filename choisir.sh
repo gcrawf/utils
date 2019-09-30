@@ -11,7 +11,10 @@ then
 
 		# Print the result for the user's choice from the TSV file.
 		key=`echo "$choices" | dmenu`
-		value=`grep -P "$key\t" "$location" | cut -f 2`
+		if [ -n "$key" ]
+		then
+			value=`grep -P "$key\t" "$location" | cut -f 2`
+		fi
 		echo "$value"
 	else
 		# Print help message
