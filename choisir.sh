@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Ensure that an argument is passed to the script
-if [ -n "$1" -o "$1" = "-" ]
+if [ -n "$1" -a "$1" != "-" ]
 then
 	if [ "$1" != "--help" ]
 	then
